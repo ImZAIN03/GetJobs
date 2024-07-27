@@ -1,15 +1,10 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config({});
 
 const app = express();
-
-app.get("/home", (req,res) => {
-    return res.status(200).json({
-        message: "I am coming from backend",
-        success: true
-    })
-})
 
 //middlewares
 app.use(express.json());
@@ -22,8 +17,8 @@ const corsOption = {
 
 app.use(cors(corsOption));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(()=>{
-    console.log(`server running on port ${PORT}`);
-})
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
