@@ -1,5 +1,5 @@
 import { User } from "./../models/user.model.js";
-import { bcrypt } from "bcryptjs";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
