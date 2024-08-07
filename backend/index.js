@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3000;
 //api
 app.use("/api/v1/user", userRoute)
 
-"http://localhost:8000/api"
+// "http://localhost:8000/api"
 
 app.listen(PORT, () => {
     connectDB();
